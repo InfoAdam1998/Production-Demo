@@ -6,19 +6,20 @@
 from pathlib import Path
 from model import build_model
 import pickle as pk
+from config import settings
 
 class ModelService:
     def __init__(self):
         self.model = None
 
-    def load_model(self, model_name = "rf_v1"):
-        model_path = Path(f"models/{model_name}")
+    def load_model(self):
+        model_path = Path(f"{settings.model_path}/{settings.model_name}")
         print(model_path)
 
         if not model_path.exists():
             build_model()
 
-        self.model = pk.load(open(f"models/{model_name}", "rb"))
+        self.model = pk.load(open(f"{settings.model_path}/{settings.model_name}", "rb"))
 
     def predict(self, input_parameters):
         return self.model.predict([input_parameters])
