@@ -2,7 +2,11 @@ from collection import load_data
 import pandas as pd
 import re
 
+from loguru import logger
+
 def prepare_data():
+    
+    logger.info("Starting up proprocessing pipeline")
     # Prepare dataset we need:
 
     #1. load dataset
@@ -17,15 +21,13 @@ def prepare_data():
     return df
 
 def encode_cat_cols(data):
-    return pd.get_dummies(data, columns=['balcony',
-                                        'parking', 
-                                        'furnished', 
-                                        'garage', 
-                                        'storage'], 
-                                        drop_first=True)
+    
+    cols = ['balcony', 'parking', 'furnished', 'garage', 'storage']
+    logger.info(f"Encoding categorical columns: {cols}")
+    return pd.get_dummies(data, columns = cols, drop_first=True)
 
 def parse_garden_col(data):
-    
+    logger.info(f"Parsing garden column")
     data['garden'] = data['garden'].apply(lambda x: 0 if x == 'Not present' else int(re.findall(r'\d+', x)[0]))
 
     return data
