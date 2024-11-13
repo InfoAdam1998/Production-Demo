@@ -1,25 +1,5 @@
-2024-11-12 22:53:14.549 | INFO     | model.model_service:load_model:13 - checking the existance of model config file at model\models/rf_db_v2
-2024-11-12 22:53:14.549 | INFO     | model.model_service:load_model:20 - model rf_db_v2 exists! -> loading model configuration file
-2024-11-12 22:53:14.582 | INFO     | model.model_service:predict:24 - making prediction!
-2024-11-12 22:53:14.616 | INFO     | __main__:main:9 - prediction = [2037.49113444]
-2024-11-12 22:55:47.978 | INFO     | model.model_service:load_model:13 - checking the existance of model config file at model\models/rf_db_v2
-2024-11-12 22:55:47.981 | WARNING  | model.model_service:load_model:17 - model at model\models/rf_db_v2 was not found -> building rf_db_v2
-2024-11-12 22:55:47.981 | INFO     | model.pipeline.model:build_model:11 - starting up model building pipeline
-2024-11-12 22:55:47.981 | INFO     | model.pipeline.preperation:prepare_data:9 - starting up preprocessing pipeline
-2024-11-12 22:55:47.982 | INFO     | model.pipeline.collection:load_data_from_db:14 - extracting the table from the database
-2024-11-12 22:55:48.047 | INFO     | model.pipeline.preperation:encode_cat_cols:23 - encoding categorical columns: ['balcony', 'parking', 'furnished', 'garage', 'storage']
-2024-11-12 22:55:48.069 | INFO     | model.pipeline.preperation:parse_garden_col:30 - pasring garden column
-2024-11-12 22:56:08.104 | INFO     | model.pipeline.model:get_X_y:39 - defining X and Y variables. 
-X vars: ['area', 'constraction_year', 'bedrooms', 'garden', 'balcony_yes', 'parking_yes', 'furnished_yes', 'garage_yes', 'storage_yes']
-y var: rent
-2024-11-12 22:56:08.105 | INFO     | model.pipeline.model:split_train_test:45 - splitting data into train and test sets
-2024-11-12 22:56:08.114 | INFO     | model.pipeline.model:train_model:54 - training a model with hyperparameters
-2024-11-12 22:56:54.053 | INFO     | model.pipeline.model:evaluate_model:72 - evaluating model performance. SCORE=0.760824264640936
-2024-11-12 22:56:54.093 | INFO     | model.pipeline.model:save_model:77 - saving a model to a directory: model\models/rf_db_v2
-2024-11-12 22:56:54.150 | INFO     | model.model_service:load_model:20 - model rf_db_v2 exists! -> loading model configuration file
-2024-11-12 22:56:54.204 | INFO     | model.model_service:predict:24 - making prediction!
-2024-11-12 22:56:54.236 | INFO     | __main__:main:9 - prediction = [2041.35090919]
-2024-11-12 23:25:02.207 | INFO     | model.model_service:load_model:13 - checking the existance of model config file at model\models/rf_db_v2
-2024-11-12 23:25:02.207 | INFO     | model.model_service:load_model:20 - model rf_db_v2 exists! -> loading model configuration file
-2024-11-12 23:25:02.273 | INFO     | model.model_service:predict:24 - making prediction!
-2024-11-12 23:25:02.295 | INFO     | __main__:main:9 - prediction = [2041.35090919]
+2024-11-13 22:42:31.926 | INFO     | __main__:main:23 - running the application...
+2024-11-13 22:42:31.926 | INFO     | model.model_service:load_model:42 - checking the existance of model config file at model\models/rf_db_v2
+2024-11-13 22:42:31.926 | INFO     | model.model_service:load_model:58 - model rf_db_v2 exists! -> loading model configuration file
+2024-11-13 22:42:31.959 | INFO     | model.model_service:predict:79 - making prediction!
+2024-11-13 22:42:31.983 | INFO     | __main__:main:39 - prediction = [2041.35090919]
