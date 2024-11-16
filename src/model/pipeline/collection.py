@@ -10,10 +10,11 @@ and pandas for handling the data in a DataFrame format.
 
 import pandas as pd
 from loguru import logger
-from sqlalchemy import select 
+from sqlalchemy import select
 
 from config import engine
 from db.db_model import RentApartments
+
 
 def load_data_from_db() -> pd.DataFrame:
     """
@@ -22,8 +23,9 @@ def load_data_from_db() -> pd.DataFrame:
     Returns:
         pd.DataFrame: DataFrame containing the RentApartments data.
     """
-    logger.info("extracting the table from the database")
+    logger.info('extracting the table from the database')
     query = select(RentApartments)
-    return pd.read_sql(query, 
-                       engine,
+    return pd.read_sql(
+        query,
+        engine,
     )

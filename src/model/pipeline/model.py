@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV, train_test_split
 
 from config import model_settings
-from model.pipeline.preperation import prepare_data
+from model.pipeline.preparation import prepare_data
 
 
 def build_model() -> None:
@@ -63,16 +63,17 @@ def build_model() -> None:
     )
     _save_model(rf)
 
+
 def _get_x_y(
-    data: pd.DataFrame,
+    dataframe: pd.DataFrame,
     col_x: list[str],
     col_y: str = 'rent',
 ) -> tuple[pd.DataFrame, pd.Series]:
     """
-    Split the dataset into features and target variable.
+    Split the dataframe into features and target variable.
 
     Args:
-        data (pd.DataFrame): The dataset to be split.
+        dataframe (pd.DataFrame): The dataset to be split.
         col_x (list[str]): List of column names for features.
         col_y (str): Name of the target variable column.
 
@@ -80,7 +81,7 @@ def _get_x_y(
         tuple: Features and target variables.
     """
     logger.info(f'defining X and Y variables. X vars: {col_x}; y var: {col_y}')
-    return data[col_x], data[col_y]
+    return dataframe[col_x], dataframe[col_y]
 
 
 def _split_train_test(
@@ -101,8 +102,9 @@ def _split_train_test(
     return train_test_split(
         features,
         target,
-        test_size=0.2,
+        test_size=0.2,  # noqa: WPS432
     )
+
 
 def _train_model(
     X_train: pd.DataFrame,
@@ -160,6 +162,7 @@ def _evaluate_model(
     )
     logger.info(f'evaluating model performance. SCORE={model_score}')
     return model_score
+
 
 def _save_model(model: RandomForestRegressor) -> None:
     """

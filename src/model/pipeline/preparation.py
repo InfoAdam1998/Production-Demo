@@ -33,7 +33,7 @@ def _encode_cat_cols(dataframe: pd.DataFrame) -> pd.DataFrame:
     """
     Encode categorical columns into dummy variables.
 
-    Arg:
+    Args:
         dataframe (pd.DataFrame): The original dataset.
 
     Returns:
@@ -47,7 +47,8 @@ def _encode_cat_cols(dataframe: pd.DataFrame) -> pd.DataFrame:
         drop_first=True,
     )
 
-def _parse_garden_col(dataframe: pd.DataFrame)-> pd.DataFrame:
+
+def _parse_garden_col(dataframe: pd.DataFrame) -> pd.DataFrame:
     """
     Parse the 'garden' column in the dataset.
 
@@ -57,7 +58,8 @@ def _parse_garden_col(dataframe: pd.DataFrame)-> pd.DataFrame:
     Returns:
         pd.DataFrame: The dataset with the 'garden' column parsed.
     """
-    logger.info("pasring garden column")
-    dataframe['garden'] = dataframe['garden'].apply(lambda x: 0 if x == 'Not present' else int(re.findall(r'\d+', x)[0]))
-
-    return dataframe 
+    logger.info('pasring garden column')
+    dataframe['garden'] = dataframe['garden'].apply(
+        lambda x: 0 if x == 'Not present' else int(re.findall(r'\d+', x)[0]),
+    )
+    return dataframe
