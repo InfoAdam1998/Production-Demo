@@ -25,7 +25,7 @@ def main():
     ml_svc.load_model()
 
     feature_values = {
-        'area': 85,
+        'area': 84,
         'constraction_year': 2015,
         'bedrooms': 2,
         'garden_area': 20,
