@@ -12,7 +12,6 @@ from loguru import logger
 from model.model_service import ModelService
 
 
-
 @logger.catch
 def main():
     """
