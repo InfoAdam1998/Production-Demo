@@ -6,7 +6,7 @@ authors = ["Adam Blanza <stevenikitaras123@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.10.7"
+python = "3.12.4"
 flask = "^3.1.0"
 pydantic = "^2.9.2"
 loguru = "^0.7.2"
