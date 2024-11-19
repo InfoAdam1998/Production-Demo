@@ -49,6 +49,7 @@ def get_prediction():
     return {'prediction': prediction}
 
 
+
 @bp.post('/')
 def get_prediction_post():
     """
