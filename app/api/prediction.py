@@ -49,7 +49,6 @@ def get_prediction():
     return {'prediction': prediction}
 
 
-
 @bp.post('/')
 def get_prediction_post():
     """
@@ -67,4 +66,4 @@ def get_prediction_post():
         list(apartment_features.model_dump().values()),
     )
 
-    return {'i want to have sex with fotini': prediction}
+    return {'predictioni': prediction}
