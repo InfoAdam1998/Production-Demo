@@ -77,5 +77,5 @@ class ModelInferenceService:
         Returns:
             list: The prediction result from the model.
         """
-        logger.info('making prediction!!!')
+        logger.info('making prediction!!!!!!!!!!!!')
         return self.model.predict([input_parameters]).tolist()
