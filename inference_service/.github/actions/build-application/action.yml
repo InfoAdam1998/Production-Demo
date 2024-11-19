@@ -1,4 +1,4 @@
-# This is the first GitHub Actions workflow
+# This is our first Github Actions workflow!
 
 name: Build Application
 
@@ -8,17 +8,17 @@ runs:
   steps:
   - name: Checkout repository
     uses: actions/checkout@v4
-  
-  - name: Set up Python 3.12
+
+  - name: Set up Python 3.10.7
     uses: actions/setup-python@v5
     with:
-      python-version: "3.12"
-  
+      python-version: '3.10.7'
+
   - name: Install poetry
     uses: snok/install-poetry@v1
     with:
       virtualenvs-in-project: true
-
+    
   - name: Load cached venv
     uses: actions/cache@v4
     id: cached-poetry-dependencies
